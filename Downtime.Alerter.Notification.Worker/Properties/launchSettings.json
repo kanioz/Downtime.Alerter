@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Downtime.Alerter.Notification.Worker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

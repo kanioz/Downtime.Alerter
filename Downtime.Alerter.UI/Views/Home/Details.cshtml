@@ -1,0 +1,101 @@
+﻿@model Downtime.Alerter.DAL.ViewModels.TargetApplicationVm
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Target Application Details</h1>
+
+<div>
+    <h4>Target Application Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Interval)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Interval)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastMonitorTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastMonitorTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NextMonitorTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NextMonitorTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UpdateDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UpdateDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+@if (Model.MonitoringHistories.Any())
+{
+    <h1>Target Application Monitoring History</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MonitoringHistories[0].MonitorTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonitoringHistories[0].IsUp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonitoringHistories[0].StatusCode)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.MonitoringHistories)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonitorTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsUp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusCode)
+                </td>
+                <td>
+                    <a asp-action="MonitorDetails" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+
