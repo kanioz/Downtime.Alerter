@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Downtime.Alerter.Entity.Models;
 
 namespace Downtime.Alerter.DAL.ViewModels

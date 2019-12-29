@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Downtime.Alerter.DAL.ViewModels;
+﻿using Downtime.Alerter.DAL.ViewModels;
 
 namespace Downtime.Alerter.DAL.Interface
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Downtime.Alerter.Entity;
+﻿using Downtime.Alerter.Entity;
 
 namespace Downtime.Alerter.DAL.Interface
 {
